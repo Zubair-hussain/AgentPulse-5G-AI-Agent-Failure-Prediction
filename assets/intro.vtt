@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+AI agents fail. Can we predict failure before it happens?
+
+00:05.000 --> 00:10.000
+Twenty thousand synthetic agent runs, with sixteen telemetry signals.
+
+00:10.000 --> 00:15.000
+Train on telemetry, validate thresholds, and test on separate cohorts.
+
+00:15.000 --> 00:20.000
+The logistic baseline achieves point seven six five ROC A U C on synthetic test data.
+
+00:20.000 --> 00:25.000
+Score failure risk locally, with no prompt and no API key.
+
+00:25.000 --> 00:30.000
+Agent Pulse. Open research by Zubair Hussain. Build, test, and contribute.
+
