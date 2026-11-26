@@ -1,22 +1,40 @@
-# Publishing checklist
-Verify author name, real Git email, account names, repository slugs and license before any push. No public uploads have been performed. Use your own tokens with least privileges; do not commit credentials. The HF owner inferred from the existing dataset is zubairH123; Kaggle and GitLab handles are not verified. Replace YOUR_KAGGLE_HANDLE.
+# Publishing AgentPulse
+
+GitHub is the canonical development repository; its default branch is `prod_core`.
+
+## Hugging Face packages
+
+- Dataset: https://huggingface.co/datasets/zubairH123/agentpulse-5g
+- Portable model: https://huggingface.co/zubairH123/agentpulse-failure-predictor
+- Docker Space: https://huggingface.co/spaces/zubairH123/agentpulse-risk-demo
+
+Stage a fresh snapshot from the repository root:
 
 ```bash
-pip install -r requirements-publish.txt
-python -m tools.stage_release --hf-owner zubairH123 --kaggle-owner YOUR_KAGGLE_HANDLE
-python -m tools.check_release release
-hf auth login
-hf repo create zubairH123/agentpulse-5g --repo-type dataset
-hf upload zubairH123/agentpulse-5g release/hf-dataset --repo-type dataset
-hf repo create zubairH123/agentpulse-failure-predictor --repo-type model
-hf upload zubairH123/agentpulse-failure-predictor release/hf-model --repo-type model
+python -m tools.stage_release --out release/huggingface-launch --hf-owner zubairH123 --kaggle-owner zubairhussain786
+python -m tools.check_release release/huggingface-launch
 ```
-Create a Docker Space in HF UI named `agentpulse-risk-demo`, then `hf upload zubairH123/agentpulse-risk-demo release/hf-space --repo-type space`. Check dataset viewer splits, test model code locally and check Space `/health`, `/docs`, `/`. HF does not execute GitHub CI; the Docker Space build is its native deployment check. Use Kaggle API authentication per official CLI docs, then:
+
+The dataset preserves its CSV shard filenames under `data/`, with explicit split patterns in the card. The model package includes portable weights, schema, example telemetry, and a standard-library inference script. The Space preserves the project directories, including demo data, tests, documentation, and media; its root README supplies Docker metadata. All three packages carry `source-revision.json`, pinning the GitHub commit and dataset checksums, and include the launch trailer and cover.
+
+Hugging Face has its own Git history. Use descriptive messages for actual upload changes; the original history remains on GitHub. Do not fabricate commits, rewrite historical authors, or force-push over remote work.
+
+Authenticate locally with `hf auth login`; never commit tokens. To upload an existing package:
 
 ```bash
-kaggle datasets create -p release/kaggle-dataset --keep-tabular
-kaggle kernels push -p release/kaggle-notebook
+hf upload zubairH123/agentpulse-5g release/huggingface-launch/hf-dataset --repo-type dataset --commit-message "data: publish reproducible synthetic agent telemetry"
+hf upload zubairH123/agentpulse-failure-predictor release/huggingface-launch/hf-model --repo-type model --commit-message "model: publish portable CPU failure predictor"
+hf upload zubairH123/agentpulse-risk-demo release/huggingface-launch/hf-space --repo-type space --commit-message "feat: deploy AgentPulse risk demo with project sources"
 ```
-Initial Kaggle upload and notebook are private by default/metadata; review then publish in UI. Kaggle dataset API currently does not list MIT, so metadata uses `other` with explicit MIT text and LICENSE file. Verify acceptance in UI. Kaggle notebook execution/status is its remote test, not GitHub Actions. The included workflow checks platform packages offline; it has not run in a hosted CI. For a full release stage using `--data data/full-5gb --out release-full`; note this duplicates the data for two platforms. The model staged remains the demo logistic model unless explicitly replaced with documented full-training weights and updated cards. Check `hf --help` and `kaggle --help` if installed CLI version differs.
 
-GitHub/GitLab: extract ZIP including `.git`, configure your actual verified commit email for subsequent work, create empty remote repositories, and set `git remote add origin <your-github-url>`; `git push -u origin main`. For GitLab use a second remote `git remote add gitlab <your-gitlab-url>` then `git push -u gitlab main`. The archive contains genuine per-file creation commits generated in one session using a local placeholder noreply address; it does not claim a thousand days of development or guaranteed contribution credit. If desired, regenerate history with your verified email before first publication. Never force push without checking remote history.
+Before updating an existing Hub repository, inspect its current revision and files. Preserve remote changes and do not delete unrelated files. Verify the public cards, dataset viewer splits, downloaded model inference, Space `/health`, valid `/predict`, and invalid-input handling after upload. The Space uses the free default CPU hardware; no paid upgrade is necessary.
+
+## Checks and release scope
+
+GitHub Actions validates Python 3.11-3.13, dataset integrity, inference, tests, and offline publishing packages. Hugging Face independently builds the Docker Space. Dataset viewer preparation and Space startup may take time after upload.
+
+This release is the 20,000-row synthetic demo. The 5 GB edition must be generated and validated separately. Do not label the demo as a 5 GB upload or present synthetic results as real-world performance.
+
+## Optional platform publishing
+
+Kaggle dataset and notebook packages are staged for review but are not uploaded by this workflow. Use your verified Kaggle account and review metadata before publishing. Hugging Face publication does not authorize posting announcements to external social accounts.

@@ -1,10 +1,20 @@
 """Offline sanity checks for staged platform metadata and local inference."""
-import argparse,json,subprocess,sys
+import argparse,hashlib,json,subprocess,sys
 from pathlib import Path
 
 def check(root):
     root=Path(root)
-    for p in root.rglob('README.md'): assert '__HF_OWNER__' not in p.read_text()
+    for name in ('hf-dataset','hf-model','hf-space'):
+        folder=root/name
+        assert '__HF_OWNER__' not in (folder/'README.md').read_text(encoding='utf-8')
+        source=json.loads((folder/'source-revision.json').read_text(encoding='utf-8'))
+        assert len(source['source_commit'])==40 and source['source_branch']=='prod_core'
+        assert (folder/'assets/intro-saas.mp4').stat().st_size>0
+    # Keep canonical source templates intact inside the Space snapshot.
+    for name in ('agentpulse','data/demo','docs','models','tests','tools','publishing'):
+        assert (root/'hf-space'/name).is_dir()
+    hashes={hashlib.sha256((root/name/'assets/intro-saas.mp4').read_bytes()).hexdigest() for name in ('hf-dataset','hf-model','hf-space')}
+    assert len(hashes)==1
     ds=root/'hf-dataset'; m=json.loads((ds/'manifest.json').read_text())
     for s in m['shards']: assert (ds/'data'/s['file']).stat().st_size==s['bytes']
     kd=root/'kaggle-dataset'; meta=json.loads((kd/'dataset-metadata.json').read_text()); assert '__KAGGLE_OWNER__' not in meta['id'] and meta['licenses']==[{'name':'other'}]
