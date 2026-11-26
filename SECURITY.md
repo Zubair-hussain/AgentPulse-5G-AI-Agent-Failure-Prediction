@@ -1,0 +1,2 @@
+# Security and responsible use
+This research demo is not a production security or safety control. Do not send secrets, private prompts, or identifying logs. The JSON model avoids executable pickle. The demo API has no authentication/rate limiting and is intended for local use or sandboxed public synthetic inputs. Add authentication, request limits and monitoring before real deployment. Report potential vulnerabilities privately through the repository's security advisory mechanism if enabled; do not post secrets in issues.
