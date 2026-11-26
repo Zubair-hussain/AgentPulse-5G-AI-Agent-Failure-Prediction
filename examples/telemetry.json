@@ -1,0 +1,18 @@
+{
+  "elapsed_ms": 720.95171,
+  "input_tokens": 1953.0,
+  "output_tokens": 78.0,
+  "tool_calls": 1.0,
+  "retry_count": 1.0,
+  "queue_ms": 46.14179,
+  "rate_limit_ratio": 0.58014,
+  "tool_error_ratio": 0.05289,
+  "context_utilization": 0.16075,
+  "cpu_utilization": 0.47361,
+  "memory_utilization": 0.05293,
+  "retrieval_score": 0.7412,
+  "budget_utilization": 0.16677,
+  "network_jitter_ms": 15.68546,
+  "concurrency": 10.0,
+  "step_count": 3.0
+}
