@@ -1,0 +1,12 @@
+image: python:3.13-slim
+variables:
+  OMP_NUM_THREADS: '2'
+  OPENBLAS_NUM_THREADS: '2'
+stages: [test]
+validate:
+  stage: test
+  script:
+    - pip install -r requirements.txt
+    - python -m tools.validate_data
+    - python -m pytest -q
+    - python -m agentpulse.predict examples/telemetry.json
