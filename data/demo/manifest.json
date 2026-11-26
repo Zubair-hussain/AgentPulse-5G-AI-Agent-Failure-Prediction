@@ -1,0 +1,169 @@
+{
+  "synthetic": true,
+  "seed": 2026,
+  "format": "csv",
+  "rows": 20000,
+  "bytes": 2588931,
+  "shards": [
+    {
+      "file": "test-0000.csv",
+      "split": "test",
+      "rows": 1000,
+      "bytes": 128616,
+      "sha256": "4c3015486083a367d7b857d34f42473543071cc2170e8bfcf47a81d3d44ffadc",
+      "positive": 276
+    },
+    {
+      "file": "validation-0001.csv",
+      "split": "validation",
+      "rows": 1000,
+      "bytes": 134868,
+      "sha256": "f43a25e4af7d1d10c7d2799157746d5e019e283ab52137921d72dac9814da632",
+      "positive": 246
+    },
+    {
+      "file": "train-0002.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128853,
+      "sha256": "00a19cb8f654c5555c29eccc6d9d1c0d508ded821ffdec307ce8810b4a276b92",
+      "positive": 221
+    },
+    {
+      "file": "train-0003.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128849,
+      "sha256": "c35c2069860e907ba229cf4abab293de3cd0cac376431e73eaa5696a7768b446",
+      "positive": 217
+    },
+    {
+      "file": "train-0004.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128765,
+      "sha256": "f88fffd49e5cc03362a67de9a77708753c1b8435efc35c9b7ceea2789ab298b4",
+      "positive": 186
+    },
+    {
+      "file": "train-0005.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 129004,
+      "sha256": "8f6962a18cd2df7501e3a62085169c29db2a8da07d65918e86b3403b75339158",
+      "positive": 232
+    },
+    {
+      "file": "train-0006.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128836,
+      "sha256": "0a193af41f16edfd38825718f82b69a2f83e0c70c747665385f86f5232690441",
+      "positive": 214
+    },
+    {
+      "file": "train-0007.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128827,
+      "sha256": "15ecf6fc70cc4bdf274e7d847798fef56f361db1eca5a830c1554f2d7715baba",
+      "positive": 216
+    },
+    {
+      "file": "train-0008.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128919,
+      "sha256": "473d2af7b1e4ea1e8728e4489949efda2a07f1544b516c86396955ab97626c2e",
+      "positive": 253
+    },
+    {
+      "file": "train-0009.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128881,
+      "sha256": "6e79da6d73a188e58f4eaa6169da74352f6366a5ad5e80cc86bb18c6338947be",
+      "positive": 206
+    },
+    {
+      "file": "test-0010.csv",
+      "split": "test",
+      "rows": 1000,
+      "bytes": 128913,
+      "sha256": "8843d7ebc1b4676841a920c782b89db2f6a1a781b64ea498e6b6d7a294f6a62b",
+      "positive": 288
+    },
+    {
+      "file": "validation-0011.csv",
+      "split": "validation",
+      "rows": 1000,
+      "bytes": 134720,
+      "sha256": "3d9f9cf98fceb89c1be19047b34703752d1ef0a4817ec8e3067fe40de204f4d9",
+      "positive": 231
+    },
+    {
+      "file": "train-0012.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128789,
+      "sha256": "6fd434a1a1a10dfcde3e426b24c9b64099642f9cc38aa9994db9d03f1dfdfef2",
+      "positive": 213
+    },
+    {
+      "file": "train-0013.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128973,
+      "sha256": "ea37811c701963e87f71c7d85967d864e7869d6f538f9683f6c8d266acd639f8",
+      "positive": 227
+    },
+    {
+      "file": "train-0014.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128743,
+      "sha256": "0d63af5b610434f1e0b449369cac74013d605c4737184f9bcfaf24688292d9a3",
+      "positive": 221
+    },
+    {
+      "file": "train-0015.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 129036,
+      "sha256": "53a321e1ea9dd09f756a56d74f687b998e0a853f2a651f1d13dda57bd5aecc15",
+      "positive": 190
+    },
+    {
+      "file": "train-0016.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128844,
+      "sha256": "da8a4b05eea34336109fbe5938f7f65fa7ec570f75c3e7dfbed7fce9e51c3412",
+      "positive": 221
+    },
+    {
+      "file": "train-0017.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128811,
+      "sha256": "06f9f4f87fd29ee551b9e8aadeef1cc35f35a59a9fa5e441c2dff3c5b30e3a5b",
+      "positive": 227
+    },
+    {
+      "file": "train-0018.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128915,
+      "sha256": "83d1e268ada8fdb874633466f12e4ac350fe2bcc48609f574880ffcb5b9f8b09",
+      "positive": 206
+    },
+    {
+      "file": "train-0019.csv",
+      "split": "train",
+      "rows": 1000,
+      "bytes": 128769,
+      "sha256": "bc279969bd6d6a732037a130c78fc97af60a9fa62769b7a0f4171107b81bb960",
+      "positive": 236
+    }
+  ]
+}
