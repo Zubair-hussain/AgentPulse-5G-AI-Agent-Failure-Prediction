@@ -1,10 +1,15 @@
 name: Validate publishing packages (no upload)
-on: [workflow_dispatch]
+on:
+  push:
+    branches: [prod_core]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   stage:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

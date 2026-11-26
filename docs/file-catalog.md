@@ -94,3 +94,9 @@ Each tracked file has one initial commit. These are real creation commits in one
 | `tools/make_intro.py` | Reproducible narrated video renderer | `feat: add tools/make_intro.py` |
 | `tools/stage_release.py` | Offline platform release folder builder | `feat: add tools/stage_release.py` |
 | `tools/validate_data.py` | Manifest integrity and schema checks | `feat: add tools/validate_data.py` |
+
+## Launch trailer update
+
+| File | Description | Change |
+|---|---|---|
+| `assets/intro-saas.mp4` | Supplied 30-second text-led SaaS launch trailer, H.264/AAC | Added alongside the original narrated media |

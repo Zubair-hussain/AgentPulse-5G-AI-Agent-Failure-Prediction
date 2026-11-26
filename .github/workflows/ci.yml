@@ -1,13 +1,19 @@
 name: Validate AgentPulse
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [prod_core]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ['3.11', '3.13']
+        python-version: ['3.11', '3.12', '3.13']
     env:
       OMP_NUM_THREADS: '2'
       OPENBLAS_NUM_THREADS: '2'

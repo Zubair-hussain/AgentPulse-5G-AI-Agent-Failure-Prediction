@@ -8,10 +8,26 @@ Created for **Zubair Hussain** · [GitHub](https://github.com/Zubair-hussain) ·
 
 ![License MIT](https://img.shields.io/badge/license-MIT-blue) ![Python 3.11–3.13](https://img.shields.io/badge/python-3.11--3.13-blue) ![Data synthetic](https://img.shields.io/badge/data-synthetic-orange)
 
-## Watch the 30-second introduction
-<video src="assets/intro.webm" poster="assets/cover.png" controls width="100%"></video>
+## Watch the 30-second AgentPulse launch trailer
 
-[Play or download the WebM](assets/intro.webm) · [Captions / transcript](assets/intro.vtt). Markdown hosts may strip video tags; use the direct file link if no embedded player appears.
+[![Watch the AgentPulse launch trailer](assets/cover.png)](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/blob/prod_core/assets/intro-saas.mp4)
+
+[Watch or download the MP4 trailer](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/raw/refs/heads/prod_core/assets/intro-saas.mp4) | text-led motion graphics and instrumental music. If GitHub does not show a player, open the download link.
+
+The dashboard is illustrative. The benchmark is measured on held-out synthetic data.
+
+Original narrated introduction: [WebM video](assets/intro.webm) | [captions / transcript](assets/intro.vtt).
+
+## Repository and development
+
+[GitHub repository](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction) | [Open issues](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/issues) | [CI runs](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/actions)
+
+The default branch is `prod_core`. Open pull requests against that branch.
+
+[![Validate AgentPulse](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/actions/workflows/ci.yml/badge.svg?branch=prod_core)](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/actions/workflows/ci.yml)
+[![Validate publishing packages](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/actions/workflows/release-check.yml/badge.svg?branch=prod_core)](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/actions/workflows/release-check.yml)
+
+CI validates data integrity, runs tests and inference on Python 3.11, 3.12 and 3.13, and checks offline publishing packages on pushes to `prod_core` and pull requests.
 
 ## What is included?
 - **20,000** synthetic rows, 20 CSV shards, 16 model inputs, 36 possible environment cohorts; 16,000 train / 2,000 validation / 2,000 test.
@@ -90,7 +106,7 @@ Open http://localhost:7860 for the form or `/docs` for interactive API documenta
 [Data dictionary](docs/data-dictionary.md) · [Data manifest](data/demo/manifest.json) · [Model card](publishing/hf-model/README.md) · [Dataset card template](publishing/hf-dataset/README.md) · [File catalog and commit messages](docs/file-catalog.md).
 
 ## Publishing and community
-[Publication checklist](docs/publish.md) covers GitHub, GitLab, Hugging Face datasets/models/Docker Spaces and Kaggle datasets/notebooks. [Discoverability](docs/discoverability.md) includes natural keywords, topics and launch strategy. [Discussion drafts](community/discussion.md), [issues](community/roadmap.md), [contributing](CONTRIBUTING.md), [security](SECURITY.md) and [citation](CITATION.cff) are included. Public releases and hosted CI are not yet created. The project name indicates the target data scale, not an existing 5 GB upload.
+[Publication checklist](docs/publish.md) covers GitHub, GitLab, Hugging Face datasets/models/Docker Spaces and Kaggle datasets/notebooks. [Discoverability](docs/discoverability.md) includes natural keywords, topics and launch strategy. [Discussion drafts](community/discussion.md), [issues](community/roadmap.md), [contributing](CONTRIBUTING.md), [security](SECURITY.md) and [citation](CITATION.cff) are included. Hosted CI runs in GitHub Actions; public platform releases are tracked in the issue roadmap. The project name indicates the target data scale, not an existing 5 GB upload.
 
 ## Test cases and reproducibility
 Run `python -m pytest -q`. Tests include deterministic generation, manifests and hashes, split isolation, feature leakage, numeric validation, inference, retraining and streaming. The notebook and offline staging were also executed locally. See [test output](reports/test-results.txt). No real-world accuracy is claimed; external validation, calibration and confidence intervals remain open issues.
