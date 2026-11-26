@@ -38,3 +38,9 @@ This release is the 20,000-row synthetic demo. The 5 GB edition must be generate
 ## Optional platform publishing
 
 Kaggle dataset and notebook packages are staged for review but are not uploaded by this workflow. Use your verified Kaggle account and review metadata before publishing. Hugging Face publication does not authorize posting announcements to external social accounts.
+
+## Published collection
+
+https://huggingface.co/collections/zubairH123/agentpulse-ai-agent-reliability-6b0831bec625b7f351986bd8
+
+Publication commits and verification are recorded in [the release report](huggingface-release.md).

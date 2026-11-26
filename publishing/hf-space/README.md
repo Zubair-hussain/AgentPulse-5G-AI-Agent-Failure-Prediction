@@ -25,7 +25,7 @@ Change the telemetry fields and click **Score telemetry** to explore a synthetic
 
 [Try the live demo](https://huggingface.co/spaces/__HF_OWNER__/agentpulse-risk-demo) | [Dataset](https://huggingface.co/datasets/__HF_OWNER__/agentpulse-5g) | [Model](https://huggingface.co/__HF_OWNER__/agentpulse-failure-predictor) | [Code and issues](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction)
 
-<video controls preload="metadata" src="assets/intro-saas.mp4" poster="assets/cover.png"></video>
+<video controls preload="metadata" src="https://huggingface.co/spaces/__HF_OWNER__/agentpulse-risk-demo/resolve/main/assets/intro-saas.mp4" poster="https://huggingface.co/spaces/__HF_OWNER__/agentpulse-risk-demo/resolve/main/assets/cover.png"></video>
 
 [Watch or download the 30-second trailer](assets/intro-saas.mp4). The dashboard in the trailer is illustrative; the benchmark below is measured on synthetic data.
 
@@ -44,6 +44,8 @@ This is a synthetic research demo. The score is not calibrated or validated for 
 The original project directories are preserved here: `agentpulse/`, `assets/`, `data/demo/`, `docs/`, `examples/`, `models/`, `notebooks/`, `publishing/`, `reports/`, `tests/`, `tools/`, and collaboration/media source directories. The Space root README provides the static app configuration. GitHub remains the canonical development repository on `prod_core`; `source-revision.json` pins the source revision used for this upload. Existing GitHub commit history is preserved on GitHub; new Hub changes have their own descriptive commits.
 
 The hosted static app uses the bundled JSON weights, with browser predictions checked against the Python predictor. Hugging Face currently requires a paid plan for Docker/Gradio compute Spaces; this static Space remains free. To run the Python API locally, use the preserved Dockerfile or `uvicorn agentpulse.api:app --port 7860`.
+
+[Explore the AgentPulse collection](https://huggingface.co/collections/zubairH123/agentpulse-ai-agent-reliability-6b0831bec625b7f351986bd8)
 
 ## Reproduce, contribute, and cite
 

@@ -31,7 +31,7 @@ configs:
 
 [Try the live demo](https://huggingface.co/spaces/__HF_OWNER__/agentpulse-risk-demo) | [Dataset](https://huggingface.co/datasets/__HF_OWNER__/agentpulse-5g) | [Model](https://huggingface.co/__HF_OWNER__/agentpulse-failure-predictor) | [Code and issues](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction)
 
-<video controls preload="metadata" src="assets/intro-saas.mp4" poster="assets/cover.png"></video>
+<video controls preload="metadata" src="https://huggingface.co/datasets/__HF_OWNER__/agentpulse-5g/resolve/main/assets/intro-saas.mp4" poster="https://huggingface.co/datasets/__HF_OWNER__/agentpulse-5g/resolve/main/assets/cover.png"></video>
 
 [Watch or download the 30-second trailer](assets/intro-saas.mp4). The dashboard in the trailer is illustrative; the benchmark below is measured on synthetic data.
 
@@ -76,6 +76,8 @@ The shipped logistic regression scores **0.7652 ROC-AUC**, **0.5859 PR-AUC**, an
 An original seeded stochastic simulator generates pre-outcome telemetry and failure labels. It uses no proprietary logs, prompts, user identities, or provider-specific traces. The source repository includes generation and retraining commands, leakage tests, checksums, and split checks.
 
 Synthetic correlations can differ from real deployments. This dataset is useful for reproducibility, evaluation tooling, and research prototypes; operational decisions require external validation. Calibration, confidence intervals, and transfer to real agent workloads remain open research tasks.
+
+[Explore the AgentPulse collection](https://huggingface.co/collections/zubairH123/agentpulse-ai-agent-reliability-6b0831bec625b7f351986bd8)
 
 ## Reproduce, contribute, and cite
 

@@ -45,7 +45,7 @@ A small **CPU-only logistic regression** that maps 16 numerical agent telemetry 
 
 [Try the live demo](https://huggingface.co/spaces/__HF_OWNER__/agentpulse-risk-demo) | [Dataset](https://huggingface.co/datasets/__HF_OWNER__/agentpulse-5g) | [Model](https://huggingface.co/__HF_OWNER__/agentpulse-failure-predictor) | [Code and issues](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction)
 
-<video controls preload="metadata" src="assets/intro-saas.mp4" poster="assets/cover.png"></video>
+<video controls preload="metadata" src="https://huggingface.co/__HF_OWNER__/agentpulse-failure-predictor/resolve/main/assets/intro-saas.mp4" poster="https://huggingface.co/__HF_OWNER__/agentpulse-failure-predictor/resolve/main/assets/cover.png"></video>
 
 [Watch or download the 30-second trailer](assets/intro-saas.mp4). The dashboard in the trailer is illustrative; the benchmark below is measured on synthetic data.
 
@@ -95,6 +95,8 @@ Training uses 16,000 synthetic runs. Validation uses 2,000 independent runs to s
 Use for synthetic reliability experiments, local inference examples, and reproducible baselines. The output is a model estimate, not a guaranteed future failure. Synthetic signals may not transfer to real agents; probability calibration and external validation remain open.
 
 Weights are exported from scikit-learn to a custom portable JSON format. This repository does not configure the Hub's hosted inference widget; use the linked static Space for interactive scoring.
+
+[Explore the AgentPulse collection](https://huggingface.co/collections/zubairH123/agentpulse-ai-agent-reliability-6b0831bec625b7f351986bd8)
 
 ## Reproduce, contribute, and cite
 

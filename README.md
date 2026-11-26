@@ -8,6 +8,12 @@ Created for **Zubair Hussain** · [GitHub](https://github.com/Zubair-hussain) ·
 
 ![License MIT](https://img.shields.io/badge/license-MIT-blue) ![Python 3.11–3.13](https://img.shields.io/badge/python-3.11--3.13-blue) ![Data synthetic](https://img.shields.io/badge/data-synthetic-orange)
 
+## Try AgentPulse on Hugging Face
+
+[**Open the live demo**](https://huggingface.co/spaces/zubairH123/agentpulse-risk-demo) | [Dataset](https://huggingface.co/datasets/zubairH123/agentpulse-5g) | [Portable model](https://huggingface.co/zubairH123/agentpulse-failure-predictor) | [Collection](https://huggingface.co/collections/zubairH123/agentpulse-ai-agent-reliability-6b0831bec625b7f351986bd8)
+
+The free browser demo runs the fitted model locally. Try the example, fewer-errors, and retries-plus-errors presets, then adjust the 16 telemetry inputs. The 20,000-row dataset, measured benchmark, model, trailer, and project sources are available on Hugging Face. This is synthetic research; the 5 GB edition is generated separately.
+
 ## Watch the 30-second AgentPulse launch trailer
 
 https://github.com/user-attachments/assets/1a2971a0-1284-4959-a66b-cacb254c5fbb
