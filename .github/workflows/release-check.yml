@@ -1,0 +1,19 @@
+name: Validate publishing packages (no upload)
+on: [workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements-publish.txt
+      - run: python -m tools.stage_release --hf-owner example-owner --kaggle-owner example-owner
+      - run: python -m tools.check_release release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staged-platform-packages
+          path: release/
