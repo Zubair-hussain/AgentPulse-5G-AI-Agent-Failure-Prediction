@@ -1,0 +1,2 @@
+# Contributing
+Open an issue with a reproducible example before major changes. Create a branch; write a test; keep generated data provenance explicit; run `python -m pytest -q` and `python -m tools.validate_data`. Use one logical commit per change, not empty commits. Never contribute personal or private production logs without rights and consent. Report model quality with held-out splits, dataset revision, thresholds and versioned metrics. Respect the MIT terms and third-party licenses.
