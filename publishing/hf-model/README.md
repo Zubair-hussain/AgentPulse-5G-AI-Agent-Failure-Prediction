@@ -94,7 +94,7 @@ Training uses 16,000 synthetic runs. Validation uses 2,000 independent runs to s
 
 Use for synthetic reliability experiments, local inference examples, and reproducible baselines. The output is a model estimate, not a guaranteed future failure. Synthetic signals may not transfer to real agents; probability calibration and external validation remain open.
 
-Weights are exported from scikit-learn to a custom portable JSON format. This repository does not configure the Hub's hosted inference widget; use the linked Docker Space for interactive scoring.
+Weights are exported from scikit-learn to a custom portable JSON format. This repository does not configure the Hub's hosted inference widget; use the linked static Space for interactive scoring.
 
 ## Reproduce, contribute, and cite
 

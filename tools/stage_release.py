@@ -1,6 +1,7 @@
 """Prepare isolated, upload-ready folders; never uploads or needs credentials."""
 import argparse,json,shutil,re,subprocess
 from pathlib import Path
+from agentpulse.schema import FEATURES,RANGES
 ROOT=Path(__file__).resolve().parents[1]
 def stage(data,out,hf,kaggle):
     data=Path(data); out=Path(out); m=json.loads((data/'manifest.json').read_text())
@@ -33,6 +34,9 @@ def stage(data,out,hf,kaggle):
         copy(name,space/name)
     copy('README.md',space/'docs/github-readme.md')
     template('publishing/hf-space/README.md',space/'README.md')
+    for name in ('index.html','predict.mjs'):
+        copy('publishing/hf-space/'+name,space/name)
+    (space/'schema.json').write_text(json.dumps({'features':FEATURES,'ranges':RANGES},indent=2)+'\n',encoding='utf-8')
     for folder in (ds,model):
         (folder/'assets').mkdir()
         for name in ('cover.png','benchmark.svg','intro-saas.mp4'):

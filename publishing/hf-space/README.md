@@ -3,8 +3,8 @@ title: AgentPulse - AI Agent Failure Risk
 emoji: "📈"
 colorFrom: blue
 colorTo: green
-sdk: docker
-app_port: 7860
+sdk: static
+app_file: index.html
 pinned: false
 license: mit
 short_description: Score synthetic agent telemetry with a local CPU model.
@@ -34,15 +34,16 @@ Change the telemetry fields and click **Score telemetry** to explore a synthetic
 - A standard-library CPU predictor with a fitted logistic regression and validation-selected threshold.
 - Sixteen numerical telemetry inputs, including retries, tool errors, resource use, and queue time.
 - The measured baseline: **0.7652 ROC-AUC** and **0.5637 F1** on 2,000 held-out synthetic runs.
-- FastAPI endpoints: `/health`, `/predict`, and interactive API documentation at `/docs`.
+- Inference runs locally in the browser, without sending telemetry to an inference server.
+- Python FastAPI and Docker sources remain available for local API deployment.
 
 This is a synthetic research demo. The score is not calibrated or validated for real production agents, and the trailer dashboard is illustrative.
 
 ## Source, directories, and commits
 
-The original project directories are preserved here: `agentpulse/`, `assets/`, `data/demo/`, `docs/`, `examples/`, `models/`, `notebooks/`, `publishing/`, `reports/`, `tests/`, `tools/`, and collaboration/media source directories. The Space root README provides the Docker configuration. GitHub remains the canonical development repository on `prod_core`; `source-revision.json` pins the source revision used for this upload. Existing GitHub commit history is preserved on GitHub; new Hub changes have their own descriptive commits.
+The original project directories are preserved here: `agentpulse/`, `assets/`, `data/demo/`, `docs/`, `examples/`, `models/`, `notebooks/`, `publishing/`, `reports/`, `tests/`, `tools/`, and collaboration/media source directories. The Space root README provides the static app configuration. GitHub remains the canonical development repository on `prod_core`; `source-revision.json` pins the source revision used for this upload. Existing GitHub commit history is preserved on GitHub; new Hub changes have their own descriptive commits.
 
-The app listens on port 7860 and runs as a non-root user. It uses the bundled JSON model and FastAPI without external inference calls.
+The hosted static app uses the bundled JSON weights, with browser predictions checked against the Python predictor. Hugging Face currently requires a paid plan for Docker/Gradio compute Spaces; this static Space remains free. To run the Python API locally, use the preserved Dockerfile or `uvicorn agentpulse.api:app --port 7860`.
 
 ## Reproduce, contribute, and cite
 

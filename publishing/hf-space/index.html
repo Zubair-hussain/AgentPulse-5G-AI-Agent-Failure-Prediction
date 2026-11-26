@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore AI agent failure prediction with 16 telemetry signals, an open synthetic dataset, and a local CPU model.">
+  <title>AgentPulse | Can you spot the next failure?</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0a101a;--panel:#111c2a;--line:#26364a;--text:#edf4ff;--muted:#aab9cc;--mint:#7af2ca}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:30px 24px 60px}a{color:var(--mint)}header,nav,.presets{display:flex;align-items:center;gap:16px;flex-wrap:wrap}header{justify-content:space-between;padding-bottom:30px}.logo{font-size:22px;font-weight:800;letter-spacing:-1px}.dot{display:inline-block;width:10px;height:10px;background:var(--mint);border-radius:50%;margin-right:8px}nav a{font-size:14px;text-decoration:none}.eyebrow{color:var(--mint);font:12px/1.5 ui-monospace,monospace;letter-spacing:2px}h1{font-size:clamp(38px,6vw,68px);line-height:1.06;letter-spacing:-2.5px;max-width:850px;margin:16px 0 22px}h2{margin:0 0 10px;font-size:23px}.lead{max-width:730px;color:var(--muted);font-size:19px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}.stat{padding:17px 20px}.stat strong{display:block;font-size:28px}.stat span,.muted{color:var(--muted);font-size:14px}.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);gap:20px;align-items:start}.panel{padding:24px}button{font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:8px;padding:9px 14px;background:#1a2a3c;color:var(--text)}button:hover{border-color:var(--mint)}button:disabled{opacity:.6;cursor:wait}.primary{background:var(--mint);color:#071c17;font-weight:700;border:0}.presets{gap:8px;margin:20px 0}form{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:6px;font-size:13px;color:var(--muted)}input{min-width:0;width:100%;border:1px solid #3c5069;border-radius:7px;background:var(--bg);color:var(--text);font:16px system-ui;padding:10px}input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--mint);outline-offset:3px}form .primary{grid-column:1/-1;margin-top:7px}.risk{font-size:64px;line-height:1.2;font-weight:750;letter-spacing:-3px;margin:25px 0 10px}.meter{height:10px;border-radius:10px;background:#26364a;overflow:hidden}.meter span{display:block;height:100%;width:0;background:var(--mint)}#verdict{font-size:20px;margin:14px 0 5px}.note{font-size:13px;color:var(--muted)}pre{overflow:auto;font-size:12px;padding:12px;background:var(--bg);border-radius:8px}video{display:block;width:100%;border-radius:10px;margin-top:16px}aside .panel+.panel{margin-top:20px}footer{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;color:var(--muted);font-size:14px}#error{color:#ffc4aa;white-space:pre-wrap}details{margin-top:20px}summary{cursor:pointer} @media(max-width:760px){.layout{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:24px}.panel{padding:20px}main{padding:20px 16px 40px}}@media(max-width:400px){form{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat strong{display:inline;margin-right:10px}}
+  </style>
+</head>
+<body>
+<main>
+  <header><div class="logo"><span class="dot"></span>AgentPulse</div><nav aria-label="Project links"><a href="https://huggingface.co/datasets/zubairH123/agentpulse-5g" target="_blank" rel="noopener">Dataset</a><a href="https://huggingface.co/zubairH123/agentpulse-failure-predictor" target="_blank" rel="noopener">Model</a><a href="https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction" target="_blank" rel="noopener">GitHub ↗</a></nav></header>
+  <div class="eyebrow">OPEN RESEARCH / AGENT RELIABILITY</div>
+  <h1>Can you spot the<br>next agent failure?</h1>
+  <p class="lead">Change the telemetry. Compare the risk. Explore what a small, local model can learn from simulated agent runs.</p>
+  <div class="stats"><div class="stat"><strong>20,000</strong><span>synthetic agent runs</span></div><div class="stat"><strong>16</strong><span>telemetry signals</span></div><div class="stat"><strong>0.7652</strong><span>held-out synthetic ROC-AUC</span></div></div>
+  <div class="layout">
+    <section class="panel" aria-labelledby="inputs-title"><h2 id="inputs-title">Put the signals to the test</h2><p class="muted">Start with a preset, then change a field and score it again.</p><div class="presets"><button type="button" data-preset="example" disabled>Example run</button><button type="button" data-preset="low" disabled>Fewer errors</button><button type="button" data-preset="high" disabled>Retries + errors</button></div><form id="telemetry"><button id="score" type="submit" class="primary" disabled>Loading model...</button></form><p id="error" role="alert"></p></section>
+    <aside><section class="panel" aria-labelledby="result-title"><h2 id="result-title">Estimated failure risk</h2><div id="result" aria-live="polite" aria-atomic="true"><div id="risk" class="risk">—</div><div class="meter" aria-hidden="true"><span id="bar"></span></div><p id="verdict">Loading the local model</p><p id="threshold" class="muted"></p></div><p class="note">Synthetic research estimate. This score is not calibrated or validated for production agents. The decision threshold was selected on a separate validation split.</p><details><summary>See prediction JSON</summary><pre id="json"></pre></details></section>
+    <section class="panel"><h2>The idea in 30 seconds</h2><video controls preload="none" poster="assets/cover.png"><source src="assets/intro-saas.mp4" type="video/mp4"></video><p class="note">Text-led trailer with instrumental music. Its dashboard is illustrative.</p></section></aside>
+  </div>
+  <footer>Built by <a href="https://zubairhussain.xyz" target="_blank" rel="noopener">Zubair Hussain</a>. MIT licensed. Predictions run in your browser; telemetry is not sent to an inference server. <a href="https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/issues" target="_blank" rel="noopener">Suggest the next experiment ↗</a><p>The included dataset is the 20,000-row demo. A generator for a separate 5 GB edition is available in the repository.</p></footer>
+</main>
+<script type="module">
+import { predict } from './predict.mjs';
+const form = document.querySelector('#telemetry');
+const score = document.querySelector('#score');
+const error = document.querySelector('#error');
+try {
+  const load = async path => { const response = await fetch(path); if (!response.ok) throw new Error(`Could not load ${path}`); return response.json(); };
+  const [model, schema, example] = await Promise.all([load('models/logistic.json'), load('schema.json'), load('examples/telemetry.json')]);
+  for (const key of schema.features) {
+    const label = document.createElement('label');
+    label.textContent = key.replaceAll('_', ' ');
+    const input = document.createElement('input');
+    input.type = 'number'; input.name = key; input.step = 'any'; input.required = true;
+    input.min = schema.ranges[key][0];
+    if (schema.ranges[key][1] !== null) input.max = schema.ranges[key][1];
+    label.append(input); form.insertBefore(label, score);
+  }
+  function evaluate() {
+    error.textContent = '';
+    try {
+      const record = Object.fromEntries([...new FormData(form)].map(([key, value]) => [key, Number(value)]));
+      const result = predict(record, model, schema);
+      document.querySelector('#risk').textContent = (result.failure_risk * 100).toFixed(1) + '%';
+      const bar = document.querySelector('#bar'); bar.style.width = `${result.failure_risk * 100}%`; bar.style.background = result.flagged ? '#ffbd86' : '#7af2ca';
+      document.querySelector('#verdict').textContent = result.flagged ? 'Above the model threshold' : 'Below the model threshold';
+      document.querySelector('#threshold').textContent = `Decision threshold: ${(result.threshold * 100).toFixed(0)}%`;
+      document.querySelector('#json').textContent = JSON.stringify(result, null, 2);
+    } catch (e) { error.textContent = e.message; }
+  }
+  const presets = {example, low: {...example, rate_limit_ratio: .01, tool_error_ratio: .01, retry_count: 0}, high: {...example, rate_limit_ratio: .95, tool_error_ratio: .9, retry_count: 8}};
+  function applyPreset(name) { for (const key of schema.features) form.elements.namedItem(key).value = presets[name][key]; evaluate(); }
+  form.addEventListener('submit', event => { event.preventDefault(); evaluate(); });
+  for (const button of document.querySelectorAll('[data-preset]')) { button.disabled = false; button.addEventListener('click', () => applyPreset(button.dataset.preset)); }
+  score.disabled = false; score.textContent = 'Score telemetry'; applyPreset('example');
+} catch (e) { error.textContent = `${e.message}. Refresh the page to try again.`; score.textContent = 'Model unavailable'; document.querySelector('#verdict').textContent = 'Could not load the model'; }
+</script>
+</body>
+</html>
