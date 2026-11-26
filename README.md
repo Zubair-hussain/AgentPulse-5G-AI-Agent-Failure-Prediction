@@ -10,9 +10,9 @@ Created for **Zubair Hussain** · [GitHub](https://github.com/Zubair-hussain) ·
 
 ## Watch the 30-second AgentPulse launch trailer
 
-[![Watch the AgentPulse launch trailer](assets/cover.png)](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/blob/prod_core/assets/intro-saas.mp4)
+https://github.com/user-attachments/assets/1a2971a0-1284-4959-a66b-cacb254c5fbb
 
-[Watch or download the MP4 trailer](https://github.com/Zubair-hussain/AgentPulse-5G-AI-Agent-Failure-Prediction/raw/refs/heads/prod_core/assets/intro-saas.mp4) | text-led motion graphics and instrumental music. If GitHub does not show a player, open the download link.
+[Download the MP4 trailer](assets/intro-saas.mp4) | 30 seconds of text-led motion graphics and instrumental music.
 
 The dashboard is illustrative. The benchmark is measured on held-out synthetic data.
 
