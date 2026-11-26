@@ -1,0 +1,46 @@
+{
+  "synthetic": true,
+  "training_rows": 16000,
+  "epochs": 2,
+  "max_eval_rows_per_shard": 1000,
+  "validation": {
+    "accuracy": 0.785,
+    "f1": 0.48687350835322196,
+    "precision": 0.5650969529085873,
+    "recall": 0.4276729559748428,
+    "roc_auc": 0.765920456563304,
+    "pr_auc": 0.5404031941479464,
+    "brier": 0.18317348611663387,
+    "confusion_matrix": [
+      [
+        1366,
+        157
+      ],
+      [
+        273,
+        204
+      ]
+    ],
+    "threshold": 0.1
+  },
+  "test": {
+    "accuracy": 0.7495,
+    "f1": 0.5295774647887324,
+    "precision": 0.562874251497006,
+    "recall": 0.5,
+    "roc_auc": 0.7630571030640668,
+    "pr_auc": 0.5901890527586051,
+    "brier": 0.20323348513588757,
+    "confusion_matrix": [
+      [
+        1217,
+        219
+      ],
+      [
+        282,
+        282
+      ]
+    ],
+    "threshold": 0.1
+  }
+}
