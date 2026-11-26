@@ -1,0 +1,4 @@
+-r requirements.txt
+pyarrow>=18,<25
+huggingface_hub>=0.30,<3
+kaggle>=1.7,<3
