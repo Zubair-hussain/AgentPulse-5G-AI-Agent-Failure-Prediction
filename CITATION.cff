@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: If you use this synthetic benchmark, please cite it.
+title: "AgentPulse-5G: Synthetic AI Agent Reliability and Failure Prediction"
+authors:
+  - family-names: Hussain
+    given-names: Zubair
+version: 0.1.0
+license: MIT
+date-released: 2026-11-26
+url: https://zubairhussain.xyz
+keywords:
+  - AI agent observability
+  - synthetic data
+  - failure prediction
+  - machine learning
